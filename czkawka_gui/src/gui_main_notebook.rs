@@ -5,6 +5,7 @@ use gtk::TreeView;
 pub struct GuiMainNotebook {
     pub notebook_main: gtk::Notebook,
 
+    pub scrolled_window_master_finder: gtk::ScrolledWindow,
     pub scrolled_window_duplicate_finder: gtk::ScrolledWindow,
     pub scrolled_window_empty_folder_finder: gtk::ScrolledWindow,
     pub scrolled_window_empty_files_finder: gtk::ScrolledWindow,
@@ -16,6 +17,7 @@ pub struct GuiMainNotebook {
     pub scrolled_window_invalid_symlinks: gtk::ScrolledWindow,
     pub scrolled_window_broken_files: gtk::ScrolledWindow,
 
+    pub tree_view_master_finder: gtk::TreeView,
     pub tree_view_duplicate_finder: gtk::TreeView,
     pub tree_view_empty_folder_finder: gtk::TreeView,
     pub tree_view_empty_files_finder: gtk::TreeView,
@@ -40,6 +42,12 @@ pub struct GuiMainNotebook {
     pub check_button_music_year: gtk::CheckButton,
 
     //// Radio Buttons
+    // Masters
+    pub radio_button_master_name: gtk::RadioButton,
+    pub radio_button_master_size: gtk::RadioButton,
+    pub radio_button_master_hashmb: gtk::RadioButton,
+    pub radio_button_master_hash: gtk::RadioButton,
+
     // Duplicates
     pub radio_button_duplicates_name: gtk::RadioButton,
     pub radio_button_duplicates_size: gtk::RadioButton,
@@ -64,6 +72,7 @@ impl GuiMainNotebook {
     pub fn create_from_builder(builder: &gtk::Builder) -> Self {
         let notebook_main: gtk::Notebook = builder.object("notebook_main").unwrap();
 
+        let scrolled_window_master_finder: gtk::ScrolledWindow = builder.object("scrolled_window_master_finder").unwrap();
         let scrolled_window_duplicate_finder: gtk::ScrolledWindow = builder.object("scrolled_window_duplicate_finder").unwrap();
         let scrolled_window_empty_folder_finder: gtk::ScrolledWindow = builder.object("scrolled_window_empty_folder_finder").unwrap();
         let scrolled_window_empty_files_finder: gtk::ScrolledWindow = builder.object("scrolled_window_empty_files_finder").unwrap();
@@ -119,6 +128,7 @@ impl GuiMainNotebook {
 
         Self {
             notebook_main,
+            scrolled_window_master_finder,
             scrolled_window_duplicate_finder,
             scrolled_window_empty_folder_finder,
             scrolled_window_empty_files_finder,
@@ -129,6 +139,7 @@ impl GuiMainNotebook {
             scrolled_window_same_music_finder,
             scrolled_window_invalid_symlinks,
             scrolled_window_broken_files,
+            tree_view_master_finder,
             tree_view_duplicate_finder,
             tree_view_empty_folder_finder,
             tree_view_empty_files_finder,
@@ -140,6 +151,7 @@ impl GuiMainNotebook {
             tree_view_invalid_symlinks,
             tree_view_broken_files,
             entry_similar_images_minimal_size,
+            entry_master_minimal_size,
             entry_duplicate_minimal_size,
             entry_big_files_number,
             entry_same_music_minimal_size,
@@ -148,6 +160,10 @@ impl GuiMainNotebook {
             check_button_music_album_title,
             check_button_music_album_artist,
             check_button_music_year,
+            radio_button_master_name,
+            radio_button_master_size,
+            radio_button_master_hashmb,
+            radio_button_master_hash,
             radio_button_duplicates_name,
             radio_button_duplicates_size,
             radio_button_duplicates_hashmb,

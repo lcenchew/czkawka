@@ -39,9 +39,7 @@ Author: Rafał Mikrut
     <property name="program-name">Czkawka</property>
     <property name="version">3.1.0</property>
     <property name="comments" translatable="yes">2020 - 2021  Rafał Mikrut(qarmin)
-
-This program is free to use and will always be.
-</property>
+    This program is free to use and will always be.</property>
     <property name="authors">Rafał Mikrut(qarmin)</property>
     <property name="logo-icon-name">system-search</property>
     <property name="license-type">mit-x11</property>
@@ -1175,6 +1173,29 @@ This program is free to use and will always be.
                       </packing>
                     </child>
                   </object>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Master files</property>
+                  </object>
+                  <packing>
+                    <property name="tab-fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkScrolledWindow" id="scrolled_window_empty_folder_finder">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="shadow-type">in</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
                 </child>
                 <child type="tab">
                   <object class="GtkLabel">
